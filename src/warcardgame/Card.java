@@ -1,40 +1,31 @@
+/**
+ * SYST 17796 Project Base code.
+ * Students can modify and extend to implement their game.
+ * Add your name as an author and the date!
+ */
 package warcardgame;
 
-public class Card {
-
-    public enum Suit {
-        Diamonds, Hearts, Spades, Clubs
-    }
-
-    public enum Value {
-        ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN,
-        JACK, QUEEN, KING
-    }
+/**
+ * A class to be used as the base Card class for the project. Must be general enough to be instantiated for any Card
+ * game. Students wishing to add to the code should remember to add themselves as a modifier.
+ *
+ * @author Team Galadhel
+ * @author dancye
+ */
+public abstract class Card {
+    //default modifier for child classes
     
-    private final Suit suit;
-    private final Value value;
-    private int worth = 0;
-
-    public Card(Suit suit, Value value, int worth) {
-        this.suit = suit;
-        this.value = value;
-    }
-
-    public Value getValue() {
-        return this.value;
-    }
-
-    public Suit getSuit() {
-        return this.suit;
-    }
-
-    public void setWorth(int worth) {
-        this.worth = worth;
-    }
-
-    public int getWorth(){
-        return worth;
-    }
-
+    /**
+     * Students should implement this method for their specific children classes
+     *
+     * @return a String representation of a card. Could be an UNO card, a regular playing card etc.
+     */
+      
+        @Override
+        public abstract String toString();
+        
+        public abstract int getWorth();
+        
+        public abstract void setWorth(int worth);
 
 }
